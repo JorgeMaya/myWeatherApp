@@ -1,0 +1,49 @@
+<main class="h-full mb-12 pl-4 pr-8">
+    <div
+        class="flex flex-col flex-wrap md:flex-row space-x-0 md:space-x-8 space-y-12 justify-center items-center">
+        <div class="bg-[#FFFBEC] rounded-xl" *ngFor="let weather of forecast">
+            <div class="flex flex-col p-8 rounded-xl bg-white shadow-xl translate-x-4 translate-y-4 w-96 md:w-auto">
+                <div class="font-bold text-xl">{{ weather.date }}</div>
+                <div
+                    class="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-32 w-32">
+                    <img class="h-full w-full" src="http://openweathermap.org/img/wn/{{ weather.icon }}.png" alt="Weather Icon">
+                </div>
+                <div class="flex flex-row items-center justify-center mt-6">
+                    <div class="font-medium text-6xl" *ngIf="unit">{{ weather.tempC | number:'1.0-0' }}°C</div>
+                    <div class="font-medium text-6xl" *ngIf="!unit">{{ weather.tempF | number:'1.0-0' }}°F</div>
+                    <div class="flex flex-col items-center ml-6">
+                        <div>{{ weather.description }}</div>
+                        <div class="mt-1">
+                            <span class="text-sm"><i class="far fa-long-arrow-up"></i></span>
+                            <span class="text-sm font-light text-gray-500" *ngIf="unit">{{ weather.highC | number:'1.0-0'
+                                }}°C</span>
+                            <span class="text-sm font-light text-gray-500" *ngIf="!unit">{{ weather.highF | number:'1.0-0'
+                                }}°F</span>
+                        </div>
+                        <div>
+                            <span class="text-sm"><i class="far fa-long-arrow-down"></i></span>
+                            <span class="text-sm font-light text-gray-500" *ngIf="unit">{{ weather.lowC | number:'1.0-0'
+                                }}°C</span>
+                            <span class="text-sm font-light text-gray-500" *ngIf="!unit">{{ weather.lowF | number:'1.0-0'
+                                }}°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-row justify-between mt-6">
+                    <div class="flex flex-col items-center">
+                        <div class="font-medium text-sm">Wind</div>
+                        <div class="text-sm text-gray-500">{{ weather.wind }}k/h</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="font-medium text-sm">Humidity</div>
+                        <div class="text-sm text-gray-500">{{ weather.humidity }}%</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="font-medium text-sm">Visibility</div>
+                        <div class="text-sm text-gray-500">{{ weather.visibility/1000 }}km</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
