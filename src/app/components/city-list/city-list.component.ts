@@ -27,7 +27,7 @@ export class CityListComponent{
 
   constructor(private formBuilder: FormBuilder, private weatherService: WeatherService) { 
     this.cityForm = this.formBuilder.group({
-      zip: ['', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.minLength(5), Validators.maxLength(5)]]
+      zip: ['', [Validators.required, Validators.pattern('^[0-9]{5}(?:-[0-9]{4})?$'), Validators.maxLength(5)]]
     });
   }
 
