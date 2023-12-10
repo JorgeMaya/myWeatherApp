@@ -1,7 +1,7 @@
-<main>
+<main class="pl-4 pr-8 pt-6 pb-12">
     <div class="flex flex-col flex-wrap md:flex-row space-x-0 md:space-x-8 space-y-12 justify-center items-center">
-        <div class="bg-[#ecfaff] rounded-xl h-full mt-12">
-            <div class="flex flex-col p-8 rounded-xl bg-white shadow-xl translate-x-4 translate-y-4 w-96 md:w-auto">
+        <div class="bg-[#ecfaff] rounded-xl w-full md:w-96 h-full">
+            <div class="flex flex-col p-8 rounded-xl bg-white shadow-xl translate-x-4 translate-y-4">
                 <div class="font-bold text-xl">Add City</div>
                 <div
                     class="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-32 w-32">
@@ -39,8 +39,8 @@
                 </form>
             </div>
         </div>
-        <div class="bg-[#FFFBEC] rounded-xl" *ngFor="let city of cities">
-            <div class="flex flex-col p-8 rounded-xl bg-white shadow-xl translate-x-4 translate-y-4 w-96 md:w-auto">
+        <div class="bg-[#FFFBEC] rounded-xl w-full md:w-96" *ngFor="let city of cities">
+            <div class="flex flex-col p-8 rounded-xl bg-white shadow-xl translate-x-4 translate-y-4">
                 <div class="flex items-start justify-between">
                     <div class="font-bold text-xl">{{ city.name }}</div>
                     <button type="button"
